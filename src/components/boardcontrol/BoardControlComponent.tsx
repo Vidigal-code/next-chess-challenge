@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { ControlsBarProps } from "@/coregame/interfaces/interface-component-props";
-import { InputNumberComponent } from "@/components/Inputnumber/InputNumberComponent";
+import { InputNumberComponent } from "@/components/inputnumber/InputNumberComponent";
 import './BoardControlComponent.scss';
 
 export const BoardControlComponent: React.FC<ControlsBarProps> = ({
