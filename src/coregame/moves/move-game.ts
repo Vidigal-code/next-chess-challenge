@@ -36,8 +36,9 @@ export class MoveValidator {
     }
 
     /**
-     * Validates a move by the DEV piece (like a chess rook).
-     * It can move any number of squares in a straight line (horizontal or vertical), if the path is clear.
+     * Validates a move by the DEV piece (moves like a chess rook and bishop combined).
+     * The DEV (Rook-like movement) can move any number of squares in a straight line: vertically, horizontally, or diagonally,
+     * as long as the path to the destination is clear.
      */
     private static validateDevMove(board: Board, piece: Piece, from: Position, to: Position): boolean {
         const dx = to.x - from.x;
@@ -46,22 +47,24 @@ export class MoveValidator {
         const absDx = Math.abs(dx);
         const absDy = Math.abs(dy);
 
-        // Only horizontal or vertical movements are valid
+        // Valid move patterns: vertical, horizontal, or diagonal
         const isValidPattern = (
-            (absDx === 0 && absDy > 0) ||   // Vertical
-            (absDy === 0 && absDx > 0)      // Horizontal
+            (absDx === 0 && absDy > 0 && absDy <= board.length) ||      // Vertical move
+            (absDy === 0 && absDx > 0 && absDx <= board.length) ||      // Horizontal move
+            (absDx === absDy && absDx > 0 && absDx <= board.length)     // Diagonal move
         );
 
-        // Invalid or obstructed path
+        // Reject move if the pattern is invalid or the path is obstructed
         if (!isValidPattern || !this.isPathClear(board, from, to)) {
             return false;
         }
 
         const target = board[to.y][to.x];
 
-        // Cannot capture piece from the same team
+        // A piece cannot capture another piece from the same team
         return !target || target.team !== piece.team;
     }
+
 
 
     /**
