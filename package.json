@@ -1,0 +1,24 @@
+{
+  "name": "next-chess-challenge",
+  "version": "1.0.0",
+  "description": "Welcome to next-chess-challenge! This is a strategy game with unique pieces, each with its own rules for movement and capture. Below, you will find a detailed explanation of how each piece works.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sass": "^1.89.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

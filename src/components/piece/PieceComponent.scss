@@ -1,0 +1,20 @@
+.piece {
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__image {
+    display: block;
+    object-fit: contain;
+  }
+}

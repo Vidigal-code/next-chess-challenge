@@ -1,0 +1,15 @@
+.render-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: radial-gradient(ellipse at center, #18181c 60%, #23242a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-top: 12px;
+  font-weight: 700;
+}
