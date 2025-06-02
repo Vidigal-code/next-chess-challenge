@@ -35,7 +35,7 @@ export const SquareBoardComponent: React.FC<SquareProps> = ({
     const displayY = totalRows - y;
 
     return (
-        <div
+        <button
             onClick={onClick}
             className={`square-board 
             ${isDark ? 'square-board--dark' : 'square-board--light'}
@@ -76,6 +76,6 @@ export const SquareBoardComponent: React.FC<SquareProps> = ({
                     }}
                 />
             )}
-        </div>
+        </button>
     );
 };
